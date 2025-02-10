@@ -35,7 +35,7 @@ const show = async (req, res)=> {
     const car = currentUser.cars.id(req.params.carId)
 
     res.render('cars/show.ejs', {
-        title: 'car',
+        title: car.make,
         car: car
     })
     

@@ -1,6 +1,8 @@
 <%- include('../partials/head') %>
 
-    <h1>Add to List</h1>
+<h1>Add to List</h1>
+
+<div class="inputs">
     <form action="/users/cars" method="POST">
         <label for="">Make: </label>
         <input type="text" name="make">
@@ -18,5 +20,5 @@
         <input type="text" name="img">
         <button type="submit" class="btn btn-primary">Add List</button>
     </form>    
-
+</div>
 <%- include('../partials/footer') %>

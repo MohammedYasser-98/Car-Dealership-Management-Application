@@ -1,6 +1,12 @@
 body {
-    background-color: rgb(107, 105, 105);
-    margin: 0px;
+    background-color: rgb(56, 54, 54);
+    color: aliceblue;
+    margin-top: 10px;
+    text-align: center;
+}
+
+body h1{
+    margin: 40px; 
     text-align: center;
 }
 
@@ -20,13 +26,45 @@ form button {
     margin-top: 10px;
 }
 
+.inputs{
+  display: flex;
+  justify-content: center;
+}
 
-.card{
+.index{
+    display: flex;
+    justify-content: space-around;
+    
+
+}
+
+
+
+#show{
 
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 10px;
+    margin-top: 20px;
+    margin-left: 355px;
 
 
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row; 
+    justify-content: center;
+}
+
+.btn-primary{
+    margin-right: 60px;
+    height: 38px;
+    margin-top: 9px;
+}
+
+.card-img-top{
+    
+    height: 410px;
+    width: 50%;
 }

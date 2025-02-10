@@ -2,17 +2,17 @@
 
     <h1>My Index</h1>
    
-        
+   <div class="index">     
            <% cars.forEach((car)=>{ %>
              
                
                    
-                   <div class="card" style="width: 18rem;">
-                       <img src="<%= car.img %>" class="card-img-top" alt="...">
+                   <div class="card" style="width: 18rem;" id="my-list">
+                       <img src="<%= car.img %>" class="card-img" alt="...">
                        <div class="card-body">
-                         <h5 class="card-title"><%= car.make %></h5>
-                         <p class="card-text"><%= car.description %></p>
-                         <a href="/users/<%= user._id %>/cars/<%= car._id %>" class="btn btn-primary">Show</a>
+                         <h5 class="card-title"><%= car.make %> <%= car.model %></h5>
+                         
+                         <a href="/users/<%= user._id %>/cars/<%= car._id %>" class="btn btn-info">Show</a>
                        </div>
                      </div>
 
@@ -22,7 +22,7 @@
 
           <%  }) %>
         
-    
+   </div>
 
 
 

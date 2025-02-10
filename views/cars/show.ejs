@@ -1,14 +1,50 @@
 <%- include('../partials/head') %>
 
-<div class="card" style="width: 18rem;">
-    <img src="<%= car.img %>" class="card-img-top" alt="...">
+<div class="card" style="width: 50rem;" id="show">
+    <img src="<%= car.img %>" class="card-img" alt="...">
     <div class="card-body">
-      <h5 class="card-title"><%= car.make %></h5>
+      <h5 class="card-title"><%= car.make %> <%= car.model %></h5>
+      <h5 class="card-title">Information:</h5>
+          
+          <p>Year: <%= car.year %>      Price: <%= car.price %>      Engine: <%= car.engine %></p>
+
+          <h5 class="card-title">Description:</h5>
+  
       <p class="card-text"><%= car.description %></p>
-      <a href="/users/<%= user._id %>/cars/<%= car._id %>/edit" class="btn btn-primary">Edit</a>
-      
-    <form action="/users/<%= user._id %>/cars/<%= car._id %>?_method=DELETE" method="POST">
-        <button type="submit" class="btn btn-primary">Delet list</button>  
-      </form>
+     
+      <div class="buttons">
+          <a href="/users/<%= user._id %>/cars/<%= car._id %>/edit" class="btn btn-primary">Make edit</a>
+        <form action="/users/<%= user._id %>/cars/<%= car._id %>?_method=DELETE" method="POST">
+            <button type="submit" class="btn btn-danger">Delete list</button>  
+          </form>
+      </div>
+    </div>
+</div>
+
+
+      <!--div class="card mb-3">
+        <img src="<%= car.img %>" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><%= car.make %> <%= car.model %></h5>
+          <h5 class="card-title">Information:</h5>
+          
+          <p>Model: <%= car.model %>      Year: <%= car.year %>      Price: <%= car.price %>      Engine: <%= car.engine %></p>
+
+          <h5>Description:</h5>
+          <p class="card-text"><%= car.description %></p>
+          <div class="buttons">
+
+              <a href="/users/<%= user._id %>/cars/<%= car._id %>/edit" class="btn btn-primary">Make Edit</a>
+              <form action="/users/<%= user._id %>/cars/<%= car._id %>?_method=DELETE" method="POST">
+                <button type="submit" class="btn btn-primary">Delete list</button>  
+              </form>
+
+          </div>
+          
+        </div>
+      </div-->
+
+
+
 
 <%- include('../partials/footer') %>      
