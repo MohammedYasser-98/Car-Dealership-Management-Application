@@ -22,6 +22,7 @@ mongoose.connection.on('connected', () => {
 })
 
 // MIDDLEWARE
+app.use(morgan('dev'))
 app.use(express.urlencoded({ extended: false }))
 app.use(express.static(path.join(__dirname, "public")))
 app.use(session({
@@ -44,6 +45,7 @@ app.use(passUserToView)
 const pagesCtrl = require('./controllers/pages')
 const authCtrl = require('./controllers/auth')
 const vipCtrl = require('./controllers/vip')
+const carCtrl = require('./controllers/cars.js')
 
 // ROUTE HANDLERS
 app.get('/', pagesCtrl.home)
@@ -53,6 +55,14 @@ app.get('/auth/sign-in', authCtrl.signInForm)
 app.post('/auth/sign-in', authCtrl.signIn)
 app.get('/auth/sign-out', authCtrl.signOut)
 app.get('/vip-lounge', isSignedIn, vipCtrl.welcome)
+
+app.use(isSignedIn);
+
+// ROUTE HANDLERS for cars
+app.get('/users/cars', carCtrl.index);
+app.get('/users/cars/new', carCtrl.newList)
+app.post('/users/cars', carCtrl.makeList)
+app.get('/users/:userId/cars/:carId', carCtrl.show)
 
 app.listen(port, () => {
     console.log(`The express app is ready on port ${port}`)

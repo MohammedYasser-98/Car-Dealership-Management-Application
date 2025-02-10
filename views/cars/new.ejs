@@ -1,0 +1,22 @@
+<%- include('../partials/head') %>
+
+    <h1>Add to List</h1>
+    <form action="/users/cars" method="POST">
+        <label for="">Make: </label>
+        <input type="text" name="make">
+        <label for="">Model: </label>
+        <input type="text" name="model">
+        <label for="">Year: </label>
+        <input type="text" name="year">
+        <label for="">Price: </label>
+        <input type="number" name="price">
+        <label for="">Description: </label>
+        <textarea name="description"></textarea>
+        <label for="">Engine: </label>
+        <input type="number" name="engine">
+        <label for="">Image: </label>
+        <input type="text" name="img">
+        <button type="submit" class="btn btn-primary">Add List</button>
+    </form>    
+
+<%- include('../partials/footer') %>

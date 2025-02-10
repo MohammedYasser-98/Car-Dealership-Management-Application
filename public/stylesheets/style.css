@@ -1,5 +1,5 @@
 body {
-    background-color: pink;
+    background-color: rgb(107, 105, 105);
     margin: 0px;
     text-align: center;
 }
@@ -19,3 +19,14 @@ form {
 form button {
     margin-top: 10px;
 }
+
+/*
+.card{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    max-width: 40vw;
+
+
+}*/
