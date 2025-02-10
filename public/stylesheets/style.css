@@ -20,13 +20,13 @@ form button {
     margin-top: 10px;
 }
 
-/*
+
 .card{
 
     display: flex;
-    flex-direction: row;
+    align-items: center;
     justify-content: center;
-    max-width: 40vw;
+    margin-top: 10px;
 
 
-}*/
+}

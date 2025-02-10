@@ -1,6 +1,14 @@
+<%- include('../partials/head') %>
+
 <div class="card" style="width: 18rem;">
     <img src="<%= car.img %>" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title"><%= car.make %></h5>
       <p class="card-text"><%= car.description %></p>
-      <a href="#" class="btn btn-primary">Show</a>
+      <a href="/users/<%= user._id %>/cars/<%= car._id %>/edit" class="btn btn-primary">Edit</a>
+      
+    <form action="/users/<%= user._id %>/cars/<%= car._id %>?_method=DELETE" method="POST">
+        <button type="submit" class="btn btn-primary">Delet list</button>  
+      </form>
+
+<%- include('../partials/footer') %>      

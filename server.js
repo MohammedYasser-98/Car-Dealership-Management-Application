@@ -25,6 +25,7 @@ mongoose.connection.on('connected', () => {
 app.use(morgan('dev'))
 app.use(express.urlencoded({ extended: false }))
 app.use(express.static(path.join(__dirname, "public")))
+app.use(methodOverride('_method'))
 app.use(session({
     secret: process.env.SESSION_SECRET,
     resave: false,
@@ -63,6 +64,10 @@ app.get('/users/cars', carCtrl.index);
 app.get('/users/cars/new', carCtrl.newList)
 app.post('/users/cars', carCtrl.makeList)
 app.get('/users/:userId/cars/:carId', carCtrl.show)
+
+app.get('/users/:userId/cars/:carId/edit', carCtrl.edit);
+app.put('/users/:userId/cars/:carId', carCtrl.update)
+app.delete('/users/:userId/cars/:carId', carCtrl.deleteList)
 
 app.listen(port, () => {
     console.log(`The express app is ready on port ${port}`)

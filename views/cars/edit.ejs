@@ -1,0 +1,22 @@
+<%- include('../partials/head') %>
+
+    <h1>Edit Page</h1>
+    <form action="/users/<%= user._id %>/cars/<%= car._id %>?_method=PUT" method="POST">
+        <label for="">Make: </label>
+        <input type="text" name="make" value="<%= car.make %>">
+        <label for="">Model: </label>
+        <input type="text" name="model" value="<%= car.model %>">
+        <label for="">Year: </label>
+        <input type="text" name="year" value="<%= car.year %>">
+        <label for="">Price: </label>
+        <input type="number" name="price" value="<%= car.price %>">
+        <label for="">Description: </label>
+        <textarea name="description" value="<%= car.description %>"></textarea>
+        <label for="">Engine: </label>
+        <input type="number" name="engine" value="<%= car.engine %>">
+        <label for="">Image: </label>
+        <input type="text" name="img" value="<%= car.img %>">
+        <button type="submit" class="btn btn-primary">Edit List</button>
+    </form>    
+
+<%- include('../partials/footer') %>
