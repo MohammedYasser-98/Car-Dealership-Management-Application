@@ -1,6 +1,8 @@
 const User = require('../models/user')
 
 
+/*---------------------user--------------------------------*/
+
 const index = async (req, res) =>{
     // console.log(req.params.userId)
     // console.log('here')
@@ -10,7 +12,9 @@ const index = async (req, res) =>{
     // console.log(currentUser)
     res.render('cars/index.ejs', {
         title: 'My Index',
-        cars: currentUser.cars
+        cars: currentUser.cars,
+        currentUser: currentUser,
+
     })
 }
 
@@ -85,7 +89,33 @@ const deleteList = async (req, res) => {
     }
 }
 
+/*------------------------public---------------------------------*/
+/*
+const publicIndex = async (req, res) =>{
+    try { 
+    const currentUser = await User.findById(req.params.userId)
+    res.render('cars/public.ejs', {
+        title: 'Home Page',
+        cars: currentUser.cars
+    })
+} catch (err) {
+    console.log(err)
+    res.redirect('/')
+}
+}
 
+const makeListForpublic = async (req, res)=> {
+    try { 
+    const currentUser = await User.findById(req.params.userId)
+    currentUser.cars.push(req.body)
+    await currentUser.save()
+    res.redirect('/cars/public')
+    } catch (err) {
+        console.log(err)
+        res.redirect('/')
+    }
+    
+}*/
 
 module.exports = {
     index,
@@ -95,4 +125,6 @@ module.exports = {
     edit,
     update,
     deleteList,
+    //publicIndex,
+    //makeListForpublic,
 }

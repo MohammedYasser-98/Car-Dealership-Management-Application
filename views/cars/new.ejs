@@ -3,7 +3,7 @@
 <h1>Add to List</h1>
 
 <div class="inputs">
-    <form action="/users/cars" method="POST">
+    <form action="/users/cars" action="/users/<%= user._id %>/public" method="POST">
         <label for="">Make: </label>
         <input type="text" name="make">
         <label for="">Model: </label>

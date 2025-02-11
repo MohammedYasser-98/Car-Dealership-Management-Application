@@ -13,7 +13,7 @@ const path = require('path')
 const isSignedIn = require('./middleware/is-signed-in')
 const passUserToView = require('./middleware/pass-user-to-view')
 
-const port = process.env.PORT ? process.env.PORT : '3000'
+const port = process.env.PORT ? process.env.PORT : '5000'
 
 // creates a connection to MONGO database
 mongoose.connect(process.env.MONGODB_URI)
@@ -47,7 +47,8 @@ const pagesCtrl = require('./controllers/pages')
 const authCtrl = require('./controllers/auth')
 const vipCtrl = require('./controllers/vip')
 const carCtrl = require('./controllers/cars.js')
-
+const communityCtrl = require('./controllers/allUsers.js')
+ 
 // ROUTE HANDLERS
 app.get('/', pagesCtrl.home)
 app.get('/auth/sign-up', authCtrl.signUp)
@@ -57,17 +58,33 @@ app.post('/auth/sign-in', authCtrl.signIn)
 app.get('/auth/sign-out', authCtrl.signOut)
 app.get('/vip-lounge', isSignedIn, vipCtrl.welcome)
 
+
+
+
+//// ROUTE HANDLERS for public cars
+app.get('/allUsers/community', communityCtrl.findUsers);
+app.get('/allUsers/:userId/community/public', communityCtrl.publicCars);
+/*
+app.get('/users/:userId/public', carCtrl.publicIndex);
+app.post('/users/:userId/public', carCtrl.makeListForpublic);
+*/
+
 app.use(isSignedIn);
 
 // ROUTE HANDLERS for cars
 app.get('/users/cars', carCtrl.index);
-app.get('/users/cars/new', carCtrl.newList)
-app.post('/users/cars', carCtrl.makeList)
-app.get('/users/:userId/cars/:carId', carCtrl.show)
-
+app.get('/users/cars/new', carCtrl.newList);
+app.post('/users/cars', carCtrl.makeList);
+app.get('/users/:userId/cars/:carId', carCtrl.show);
 app.get('/users/:userId/cars/:carId/edit', carCtrl.edit);
-app.put('/users/:userId/cars/:carId', carCtrl.update)
-app.delete('/users/:userId/cars/:carId', carCtrl.deleteList)
+app.put('/users/:userId/cars/:carId', carCtrl.update);
+app.delete('/users/:userId/cars/:carId', carCtrl.deleteList);
+
+
+
+
+
+
 
 app.listen(port, () => {
     console.log(`The express app is ready on port ${port}`)

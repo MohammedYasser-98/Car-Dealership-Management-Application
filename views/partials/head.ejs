@@ -26,9 +26,12 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
               <li class="nav-item">
                 <a class="nav-link" aria-current="page" href="/">Home</a>
               </li>
+              
+              
               <% if (user) { %>
               <li class="nav-item">
                 <a class="nav-link" href="/auth/sign-out">Sign Out</a>
@@ -39,8 +42,9 @@
               <li class="nav-item">
                 <a class="nav-link" href="/users/cars/new">Add to my list</a>
               </li>
-              
-
+              <li class="nav-item">
+                <a class="nav-link" href="/allUsers/community">View other users</a>
+              </li>
               <% } else { %>
               <li class="nav-item">
                 <a class="nav-link" href="/auth/sign-up">Sign Up</a>

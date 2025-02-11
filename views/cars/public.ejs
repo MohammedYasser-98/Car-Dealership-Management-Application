@@ -1,12 +1,12 @@
 <%- include('../partials/head') %>
 
-    <h1>My Index</h1>
+    <h1>Public</h1>
    
    <div class="index">     
            <% cars.forEach((car)=>{ %>
              
                
-            
+                   
                    <div class="card" style="width: 18rem;" id="my-list">
                        <img src="<%= car.img %>" class="card-img" alt="...">
                        <div class="card-body">
@@ -16,13 +16,38 @@
                        </div>
                      </div>
 
-             
+
                
                
 
           <%  }) %>
+
+          
+        </div>
+
         
-   </div>
+<form action="">
+
+  <label for="">Minimum price: </label>
+  <input type="number" name="minPr">
+  <label for="">Maximum price: </label>
+  <input type="number" name="maxPr">
+
+  <label for="">Make: </label>
+  <input type="number" name="make1">
+
+  <label for="">Model: </label>
+  <input type="number" name="model1">
+
+  <label for="">Year: </label>
+  <input type="number" name="year1">
+
+  <label for="">Engine: </label>
+  <input type="number" name="engine1">
+
+
+</form>
+
 
 
 
