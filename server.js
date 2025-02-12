@@ -56,7 +56,7 @@ app.post('/auth/sign-up', authCtrl.addUser)
 app.get('/auth/sign-in', authCtrl.signInForm)
 app.post('/auth/sign-in', authCtrl.signIn)
 app.get('/auth/sign-out', authCtrl.signOut)
-app.get('/vip-lounge', isSignedIn, vipCtrl.welcome)
+//app.get('/vip-lounge', isSignedIn, vipCtrl.welcome)
 
 
 

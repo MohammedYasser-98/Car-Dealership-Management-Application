@@ -6,19 +6,21 @@
       <h5 class="card-title"><%= car.make %> <%= car.model %></h5>
       <h5 class="card-title">Information:</h5>
           
-          <p>Year: <%= car.year %>      Price: <%= car.price %>      Engine: <%= car.engine %></p>
+          <p>Year: <%= car.year %>      Price: <%= car.price %>      Engine: <%= car.engine %>      Options: <%= car.options %>      Fuel type: <%= car.fuel %></p>
 
           <h5 class="card-title">Description:</h5>
   
       <p class="card-text"><%= car.description %></p>
      
+      <% if (currentUser.equals(user._id)) { %>
       <div class="buttons">
           <a href="/users/<%= user._id %>/cars/<%= car._id %>/edit" class="btn btn-primary">Make edit</a>
         <form action="/users/<%= user._id %>/cars/<%= car._id %>?_method=DELETE" method="POST">
-            <button type="submit" class="btn btn-danger">Delete list</button>  
+            <button type="submit" class="btn btn-danger">Delete</button>  
           </form>
           
       </div>
+   <% } %>
     </div>
 </div>
 

@@ -1,6 +1,8 @@
 <%- include('../partials/head') %>
 
-    <h1>Public</h1>
+    <h1><%= user.username %> cars</h1>
+    <p>Name: <%= user.firstName %> <%= user.lastName %></p>
+    <p> Phone Number: <%= user.phoneNumber %></p>
    
    <div class="index">     
            <% cars.forEach((car)=>{ %>
@@ -24,31 +26,5 @@
 
           
         </div>
-
-        
-<form action="">
-
-  <label for="">Minimum price: </label>
-  <input type="number" name="minPr">
-  <label for="">Maximum price: </label>
-  <input type="number" name="maxPr">
-
-  <label for="">Make: </label>
-  <input type="number" name="make1">
-
-  <label for="">Model: </label>
-  <input type="number" name="model1">
-
-  <label for="">Year: </label>
-  <input type="number" name="year1">
-
-  <label for="">Engine: </label>
-  <input type="number" name="engine1">
-
-
-</form>
-
-
-
 
 <%- include('../partials/footer') %>

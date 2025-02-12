@@ -40,7 +40,8 @@ const show = async (req, res)=> {
 
     res.render('cars/show.ejs', {
         title: car.make,
-        car: car
+        car: car,
+        currentUser: currentUser,
     })
     
 }

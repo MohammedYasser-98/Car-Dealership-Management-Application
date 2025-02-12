@@ -33,9 +33,15 @@ form button {
 
 .index{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    flex-wrap: wrap;
     
+}
 
+#my-list{
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
 }
 
 
@@ -47,9 +53,7 @@ form button {
     justify-content: center;
     margin-top: 20px;
     margin-left: 355px;
-
-
-}
+} 
 
 .buttons{
     display: flex;

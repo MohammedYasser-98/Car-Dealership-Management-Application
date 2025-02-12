@@ -19,7 +19,7 @@ const listingSchema = new mongoose.Schema({
     },
     options: {
         type: String,
-        enum: [],
+        enum: ['low', 'mid', 'high'],
       },
 
       description: {
@@ -34,7 +34,7 @@ const listingSchema = new mongoose.Schema({
     
     fuel: {
         type: String,
-        enum: ['Petrol', 'Diesel'],
+        enum: ['petrol', 'diesel'],
     },
     
       img: {
